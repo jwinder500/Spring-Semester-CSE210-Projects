@@ -15,7 +15,7 @@ namespace Develop02
             "Did you learn anything interesting recently?",
             "Was there anything that was funnier than usual that you found recently?"
         };
-        var random = new Random();
+        Random random = new Random();
         public string SelectRandomPrompt()
         {
             int index = random.Next(prompts.Count);

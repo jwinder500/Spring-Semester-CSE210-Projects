@@ -6,30 +6,46 @@ namespace Develop02{
     {
         static void Main(string[] args)
         {
-            //add some test entries
-            Entry myEntry = new Entry();
-            myEntry.StorePrompt("What is your name?");
-            myEntry.StoreResponse("James Winder");
-            myEntry.StoreDate("8 May 2023");
-
-            //add some test entries
-            Entry yourEntry = new Entry();
-            yourEntry.StorePrompt("What is your favorite food?");
-            yourEntry.StoreResponse("Penut Butter");
-            yourEntry.StoreDate("8 May 2023");
-
-            //Create journal to test
+            int number = 6;
             Journal journal = new Journal();
-            journal.StoreEntry(myEntry);
-            journal.StoreEntry(yourEntry);
 
-            //Show the journal contents
-            List<Entry> entries = journal.GetEntries();
-            foreach (Entry entry in entries)
+            while (number != 0)
             {
-                string message
-                    = $"{entry.GetDate()}\n{entry.GetPrompt()}\n{entry.GetResponse()}";
-                Console.WriteLine(message);
+                Console.WriteLine("What would you like to do?");
+                Console.WriteLine("0. Leave");
+                Console.WriteLine("1. Write a new entry");
+                Console.WriteLine("2. Display prompts");
+
+                string num = Console.ReadLine();
+                number = Int16.Parse(num);
+
+                if (number == 1)
+                {
+                    Prompt prompt = new Prompt();
+                    string NewPrompt = prompt.SelectRandomPrompt();
+                    Console.WriteLine($"{NewPrompt}");
+
+                    Entry yourEntry = new Entry();
+                    yourEntry.StorePrompt(NewPrompt);
+                    string response = yourEntry.GetResponse();
+                    yourEntry.StorePrompt(response);
+                    string date = yourEntry.GetDate();
+                    yourEntry.StoreDate(date);
+
+                    journal.StoreEntry(yourEntry);
+                    journal.entries.Add(yourEntry);
+                }
+
+                if (number == 2)
+                {
+                    List<Entry> entries = journal.entries;
+                    foreach (Entry entry in entries)
+                    {
+                        string message
+                            = $"{entry.GetDate()}\n{entry.GetPrompt()}\n{entry.GetResponse()}";
+                        Console.WriteLine(message);
+                    }
+                }
             }
         }
     }  

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace Develop02
@@ -12,6 +13,7 @@ namespace Develop02
         {
             entries = new List<Entry>();
         }
+        public string NewEntry;
         public List<Entry> GetEntries()
         {
             return entries;

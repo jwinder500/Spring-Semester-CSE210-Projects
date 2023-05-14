@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace Develop02
 {
     ///<summary>
@@ -7,18 +10,24 @@ namespace Develop02
     {
         public string prompt;
         public string response;
-        public string date;
+        public string day;
         public string GetPrompt()
         {
+            Prompt NewPrompt = new Prompt();
+            string prompt = NewPrompt.SelectRandomPrompt();
             return prompt;
         }
         public string GetResponse()
         {
+            string response = Console.ReadLine();
             return response;
         }
         public string GetDate()
         {
-            return date;
+            
+            var date = DateTime.Today;
+            string day = date.ToString();
+            return day;
         }
         public void StorePrompt(string prompt)
         {
@@ -28,9 +37,9 @@ namespace Develop02
         {
             this.response = response;
         }
-        public void StoreDate(string date)
+        public void StoreDate(string day)
         {
-            this.date = date;
+            this.day = day;
         }
     }
 }
