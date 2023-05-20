@@ -32,8 +32,9 @@ namespace Develop03
         public List<string> HideWords()
         {
             hiddenWords = words;
-            int number = hiddenWords.Count();
-            hiddenWords[number] = "_";
+            int randomword = random.Next(hiddenWords.Count());
+            hiddenWords[randomword] = "_";
+            words = hiddenWords;
             return hiddenWords;
         }
         public string Display()

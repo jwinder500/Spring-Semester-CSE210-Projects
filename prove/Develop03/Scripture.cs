@@ -20,7 +20,5 @@ namespace Develop03
             string scripture = $"{scriptures[index]}";
             return scripture;
         }
-
-
     }
 }

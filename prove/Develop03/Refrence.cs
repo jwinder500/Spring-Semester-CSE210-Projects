@@ -9,10 +9,8 @@ namespace Develop03
         private string refrence;
         private List<string> listRefrence = new List<string>();
 
-        public string getRefrence()
+        public string getRefrence(List<string> listrefrence)
         {
-            Word newRefrence = new Word();
-            listRefrence = newRefrence.SplitWords();
             while (listRefrence.Count() > 2)
             {
                 listRefrence.RemoveAt(listRefrence.Count());
