@@ -15,7 +15,7 @@ namespace Develop03
         {
             Scripture newScripture = new Scripture();
             string scripture = newScripture.selectRandomScripture();
-            List<string> words = scripture.Split(" ").ToList();
+            words = scripture.Split(" ").ToList();
             return words;
         }
         public List<string> RemoveReference()
@@ -32,7 +32,7 @@ namespace Develop03
         public List<string> HideWords()
         {
             hiddenWords = words;
-            int randomword = random.Next(hiddenWords.Count());
+            int randomword = random.Next(hiddenWords.Count - 1);
             hiddenWords[randomword] = "_";
             words = hiddenWords;
             return hiddenWords;
