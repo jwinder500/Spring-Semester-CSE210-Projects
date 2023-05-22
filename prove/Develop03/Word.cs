@@ -9,7 +9,6 @@ namespace Develop03
         // It also increases the amout of words hidden each time
         private List<string> words = new List<string>{};
         private List<string> hiddenWords = new List<string>{};
-        private int numberOfWords;
         Random random = new Random();
         public List<string> SplitWords()
         {
