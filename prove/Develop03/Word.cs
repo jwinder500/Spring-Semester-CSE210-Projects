@@ -24,11 +24,6 @@ namespace Develop03
             words.RemoveAt(0);
             return words;
         }
-        private int Count()
-        {
-            numberOfWords = words.Count();
-            return numberOfWords;
-        }
         public List<string> HideWords()
         {
             hiddenWords = words;
@@ -40,6 +35,7 @@ namespace Develop03
         public string Display()
         {
             string adjustedWords = string.Join(" ", hiddenWords);
+            Console.WriteLine($"{adjustedWords}");
             return adjustedWords;
         }
     }

@@ -12,18 +12,35 @@ namespace Develop03
             List<string> wordlist = scripture.SplitWords();
             Refrence refrence = new Refrence();
             string input = "2";
+
+            Console.WriteLine("How many words would you like to start removing?");
+            string wordsremoving = Console.ReadLine();
+            int removing = int.Parse(wordsremoving);
+            int removingLater = removing;
             
             while (input != "0")
             {
-                Console.WriteLine("How many words would you like to start removing?(1-5)");
-                string wordsremoving = Console.ReadLine();
-                int removing = int.Parse(wordsremoving);
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                if (input == "1")
+                {
+                    removingLater = removing + 1;
+                    removing = removingLater;
+                }
                 while (removing != 0)
                 {
                     scripture.HideWords();
                     removing = removing - 1;
                 }
-                refrence.getRefrence(wordlist);
                 Console.WriteLine($"{refrence}");
                 if (input == "2")
                 {
