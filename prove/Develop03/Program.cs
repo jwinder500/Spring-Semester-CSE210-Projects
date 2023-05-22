@@ -11,9 +11,10 @@ namespace Develop03
             Word scripture = new Word();
             List<string> wordlist = scripture.SplitWords();
             Refrence refrence = new Refrence();
+            string stringRefrence = refrence.getRefrence(wordlist);
             string input = "2";
 
-            Console.WriteLine("How many words would you like to start removing?");
+            Console.WriteLine("How many words would you like to start removing?(1-5)");
             string wordsremoving = Console.ReadLine();
             int removing = int.Parse(wordsremoving);
             int removingLater = removing;
@@ -33,7 +34,7 @@ namespace Develop03
                 Console.WriteLine("");
                 if (input == "1")
                 {
-                    removingLater = removing + 1;
+                    removingLater += 1;
                     removing = removingLater;
                 }
                 while (removing != 0)
@@ -41,7 +42,7 @@ namespace Develop03
                     scripture.HideWords();
                     removing = removing - 1;
                 }
-                Console.WriteLine($"{refrence}");
+                Console.WriteLine($"{stringRefrence}");
                 if (input == "2")
                 {
                     scripture.RemoveReference();

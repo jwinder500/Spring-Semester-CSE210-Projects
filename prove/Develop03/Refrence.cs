@@ -11,7 +11,7 @@ namespace Develop03
 
         public string getRefrence(List<string> listrefrence)
         {
-            while (listRefrence.Count - 1 >= 1)
+            while (listRefrence.Count >= 2)
             {
                 listRefrence.RemoveAt(listRefrence.Count - 1);
             }
