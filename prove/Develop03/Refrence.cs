@@ -7,15 +7,14 @@ namespace Develop03
     {
         //This class holds the refrence
         private string refrence;
-        private List<string> listRefrence = new List<string>();
 
-        public string getRefrence(List<string> listrefrence)
+        public string getRefrence(List<string> list)
         {
-            while (listRefrence.Count >= 2)
+            while (list.Count >= 3)
             {
-                listRefrence.RemoveAt(listRefrence.Count - 1);
+                list.RemoveAt(list.Count - 1);
             }
-            refrence = string.Join(" ", listRefrence);
+            refrence = string.Join(" ", list);
             return refrence;
         }
     }

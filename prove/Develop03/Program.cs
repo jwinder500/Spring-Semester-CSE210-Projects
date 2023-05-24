@@ -11,7 +11,8 @@ namespace Develop03
             Word scripture = new Word();
             List<string> wordlist = scripture.SplitWords();
             Refrence refrence = new Refrence();
-            string stringRefrence = refrence.getRefrence(wordlist);
+            List<string> refrencelist = wordlist;
+            string stringRefrence = refrence.getRefrence(refrencelist);
             string input = "2";
 
             Console.WriteLine("How many words would you like to start removing?(1-5)");
