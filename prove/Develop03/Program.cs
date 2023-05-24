@@ -11,7 +11,7 @@ namespace Develop03
             Word scripture = new Word();
             List<string> wordlist = scripture.SplitWords();
             Refrence refrence = new Refrence();
-            List<string> refrencelist = wordlist;
+            List<string> refrencelist = wordlist.ToList();
             string stringRefrence = refrence.getRefrence(refrencelist);
             string input = "2";
 
@@ -22,17 +22,12 @@ namespace Develop03
             
             while (input != "0")
             {
-                Console.WriteLine("");
-                Console.WriteLine("");
-                Console.WriteLine("");
-                Console.WriteLine("");
-                Console.WriteLine("");
-                Console.WriteLine("");
-                Console.WriteLine("");
-                Console.WriteLine("");
-                Console.WriteLine("");
-                Console.WriteLine("");
-                Console.WriteLine("");
+                int spacing = 20;
+                while (spacing != 0)
+                {
+                    Console.WriteLine("");
+                    spacing = spacing - 1;
+                }
                 if (input == "1")
                 {
                     removingLater += 1;
@@ -40,8 +35,15 @@ namespace Develop03
                 }
                 while (removing != 0)
                 {
-                    scripture.HideWords();
-                    removing = removing - 1;
+                    if(wordlist.Distinct().Count() == 1)
+                    {
+                        removing = 0;
+                    }
+                    else
+                    {
+                        scripture.HideWords();
+                        removing = removing - 1;
+                    }
                 }
                 Console.WriteLine($"{stringRefrence}");
                 if (input == "2")
