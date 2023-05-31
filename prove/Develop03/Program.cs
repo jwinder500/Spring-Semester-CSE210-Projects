@@ -22,12 +22,8 @@ namespace Develop03
             
             while (input != "0")
             {
-                int spacing = 20;
-                while (spacing != 0)
-                {
-                    Console.WriteLine("");
-                    spacing = spacing - 1;
-                }
+                Console.Clear();
+                Console.Clear();
                 if (input == "1")
                 {
                     removingLater += 1;
