@@ -14,6 +14,12 @@ namespace Develop04
             getDescription(description);
             // this tells the person what they will be doing for the excercise
 
+            private List<string> prompts = new List<string>;
+            
+            prompts.addPrompts(prompt);
+            prompts.selectRandomPrompt();
+            
+            
             Console.WriteLine(askTime);
             string duration = Console.ReadLine();
             int time = getDuration(duration);
