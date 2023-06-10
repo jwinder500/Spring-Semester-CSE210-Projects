@@ -19,9 +19,12 @@ namespace Develop04
         public void wipePrompts()
         {
             //this function wipes everything from prompts
-            foreach (string prompt in prompts)
+            if (prompts.Count >= 0)
             {
-                prompts.Remove(prompt);
+                foreach (string s in prompts)
+                {
+                    prompts.Remove(s);
+                }
             }
         }
 

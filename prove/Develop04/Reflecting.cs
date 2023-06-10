@@ -13,12 +13,14 @@ namespace Develop04
 
             getDescription(description);
             // this tells the person what they will be doing for the excercise
-
-            private List<string> prompts = new List<string>;
             
             prompts.addPrompts(prompt);
             prompts.selectRandomPrompt();
-            
+            //This gets a prompt for the user
+
+            prompts.wipePrompts();
+            prompts.addPrompts(questions);
+            //This adds questions to be used in the clsss
             
             Console.WriteLine(askTime);
             string duration = Console.ReadLine();
@@ -27,14 +29,25 @@ namespace Develop04
 
             getReady();
 
+            Console.WriteLine("Now ponder on each of the following questions as they relate to this expirience");
+            //This tells the user what to do
+            Console.WriteLine("You may begin in:");
+            timeKeeping.countdown(5);
+
             while(time >= 0)
             {
-                
+                prompts.selectRandomPrompt();
+                timeKeeping.spinner();
+                timeKeeping.spinner();
+                time -= 8;
             }
+
+            prompts.wipePrompts();
+            //gets rid of pompt
 
             getFinalMessage(activity);
         }
-        private string description = "";
+        private string description = "For this Activity you will ponder a few questions related to something that you did.";
         private string activity = "Reflecting";
         //This is some of the variables used in the run reflecting function
 
@@ -45,6 +58,7 @@ namespace Develop04
             "Think of a time when you helped someone in need.",
             "Think of a time when you did something truly selfless."
         };
+        //This is the list of prompts that a user can get
 
         private List<string> questions = new List<string>
         {
@@ -58,5 +72,6 @@ namespace Develop04
             "What did you learn about yourself through this expirience?",
             "How can you keep this expirience in mind in the future?"
         };
+        //This is a list of questions related to what the user got for their prompt
     }
 }

@@ -9,7 +9,7 @@ namespace Develop04
             //This class runs the breathing exercise
 
             getWelcome(activity);
-            //welcomes user to breath in and out
+            //welcomes user to breathing class
 
             getDescription(description);
             // this tells the person what they will be doing for the excercise

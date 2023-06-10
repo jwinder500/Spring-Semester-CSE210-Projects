@@ -8,6 +8,8 @@ namespace Develop04
 
         protected Timer timeKeeping = new Timer();
         //This helpes keep track of time
+        protected Prompt prompts = new Prompt();
+        //This gives us access to prompt class
 
         protected string getWelcome(string activity)
         {
