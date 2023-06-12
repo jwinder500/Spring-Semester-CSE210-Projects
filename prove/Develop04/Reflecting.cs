@@ -4,6 +4,7 @@ namespace Develop04
 {
     public class Reflecting:Activity
     {
+        
         public void runReflecting()
         {
             //This class runs the breathing exercise
@@ -13,13 +14,12 @@ namespace Develop04
 
             getDescription(description);
             // this tells the person what they will be doing for the excercise
-            
+
             prompts.addPrompts(prompt);
             prompts.selectRandomPrompt();
             //This gets a prompt for the user
 
-            prompts.wipePrompts();
-            prompts.addPrompts(questions);
+            questions.addPrompts(question);
             //This adds questions to be used in the clsss
             
             Console.WriteLine(askTime);
@@ -36,14 +36,12 @@ namespace Develop04
 
             while(time >= 0)
             {
-                prompts.selectRandomPrompt();
+                Console.WriteLine();
+                Console.WriteLine(prompts.selectRandomPrompt());
                 timeKeeping.spinner();
                 timeKeeping.spinner();
                 time -= 8;
             }
-
-            prompts.wipePrompts();
-            //gets rid of pompt
 
             getFinalMessage(activity);
         }
@@ -60,7 +58,7 @@ namespace Develop04
         };
         //This is the list of prompts that a user can get
 
-        private List<string> questions = new List<string>
+        private List<string> question = new List<string>
         {
             "Why was this expiriance meaningful to you?",
             "Have you ever done anything like this before?",

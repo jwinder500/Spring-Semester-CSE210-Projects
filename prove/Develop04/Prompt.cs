@@ -15,18 +15,6 @@ namespace Develop04
             //This function adds to prompts list
             prompts = promptlist;
         }
-        
-        public void wipePrompts()
-        {
-            //this function wipes everything from prompts
-            if (prompts.Count >= 0)
-            {
-                foreach (string s in prompts)
-                {
-                    prompts.Remove(s);
-                }
-            }
-        }
 
         Random random = new Random();
         // Creates random variable 

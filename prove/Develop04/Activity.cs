@@ -8,8 +8,15 @@ namespace Develop04
 
         protected Timer timeKeeping = new Timer();
         //This helpes keep track of time
+
         protected Prompt prompts = new Prompt();
         //This gives us access to prompt class
+
+        protected Prompt prompts2 = new Prompt();
+        //This gives us access to prompt class
+
+        protected Prompt questions = new Prompt();
+        //This creates questions variable
 
         protected string getWelcome(string activity)
         {
@@ -28,6 +35,7 @@ namespace Develop04
         {
             string duration = activityTime;
             int remaining = int.Parse(duration);
+            remaining -= 1;
             return remaining;
             //This is the time it takes for the activity to countdown
         }
@@ -44,6 +52,7 @@ namespace Develop04
         {
             Console.WriteLine("Get Ready");
             timeKeeping.dotdotdot(3);
+            Console.WriteLine();
         }
     }
 }

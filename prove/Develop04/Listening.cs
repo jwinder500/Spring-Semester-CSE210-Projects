@@ -23,8 +23,8 @@ namespace Develop04
             Console.WriteLine("List as many responses you can to the followint prompt");
             //Tells user what to do
 
-            prompts.addPrompts(prompt);
-            prompts.selectRandomPrompt();
+            prompts2.addPrompts(prompt);
+            prompts2.selectRandomPrompt();
 
             getReady();
 
@@ -34,9 +34,6 @@ namespace Develop04
                 timeKeeping.spinner();
                 time -= 4;
             }
-
-            prompts.wipePrompts();
-            //gets rid of pompts
 
             getFinalMessage(activity);
         }
