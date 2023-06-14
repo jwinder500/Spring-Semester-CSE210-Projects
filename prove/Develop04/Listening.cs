@@ -20,7 +20,7 @@ namespace Develop04
             getReady();
 
             Console.WriteLine();
-            Console.WriteLine("List as many responses you can to the followint prompt");
+            Console.WriteLine("List as many responses you can to the following prompt");
             //Tells user what to do
 
             prompts2.addPrompts(prompt);
@@ -31,6 +31,8 @@ namespace Develop04
             while(time >= 0)
             {
                 addItem();
+                timeKeeping.spinner();
+                time -= 4;
                 timeKeeping.spinner();
                 time -= 4;
             }

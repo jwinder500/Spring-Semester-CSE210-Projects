@@ -39,8 +39,9 @@ namespace Develop04
                 Console.WriteLine();
                 Console.WriteLine(prompts.selectRandomPrompt());
                 timeKeeping.spinner();
+                time -= 4;
                 timeKeeping.spinner();
-                time -= 8;
+                time -= 4;
             }
 
             getFinalMessage(activity);
