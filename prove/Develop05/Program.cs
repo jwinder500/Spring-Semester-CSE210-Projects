@@ -13,6 +13,7 @@ namespace Develop05
             Eternal_Goal eternal = new Eternal_Goal();
             Checklist_Goal checklist = new Checklist_Goal();
             Progress_Goal progress = new Progress_Goal();
+            Points points = new Points();
 
             int Keep_Going = 1;
             while (Keep_Going != 0)
@@ -82,11 +83,69 @@ namespace Develop05
 
                     if (selection1 == 1)
                     {
-                        goal.DisplayGoals();
+                        int selection3 = 0;
+                        Console.WriteLine();
+                        Console.WriteLine("What type of goal would you like to view? ");
+                        Console.WriteLine("1. Regular. ");
+                        Console.WriteLine("2. Eternal. ");
+                        Console.WriteLine("3. Checklist. ");
+                        Console.WriteLine("4. Progress. ");
+                        Console.WriteLine();
+                        selection3 = int.Parse(Console.ReadLine());
+                        Console.WriteLine();
+                        if (selection3 == 1)
+                        {
+                            goal.DisplayGoals();
+                        }
+                        else if (selection3 == 2)
+                        {
+                            eternal.DisplayGoals();
+                        }
+                        else if (selection3 == 3)
+                        {
+                            checklist.DisplayGoals();
+                        }
+                        else if (selection3 == 4)
+                        {
+                            progress.DisplayGoals();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Try a different number.");
+                        }
                     }
                     else if (selection1 == 2)
                     {
-                        goal.DisplayCompleted();
+                        int selection4 = 0;
+                        Console.WriteLine();
+                        Console.WriteLine("What type of goal would you like to view? ");
+                        Console.WriteLine("1. Regular. ");
+                        Console.WriteLine("2. Eternal. ");
+                        Console.WriteLine("3. Checklist. ");
+                        Console.WriteLine("4. Progress. ");
+                        Console.WriteLine();
+                        selection4 = int.Parse(Console.ReadLine());
+                        Console.WriteLine();
+                        if (selection4 == 1)
+                        {
+                            goal.DisplayCompleted();
+                        }
+                        else if (selection4 == 2)
+                        {
+                            eternal.DisplayCompleted();
+                        }
+                        else if (selection4 == 3)
+                        {
+                            checklist.DisplayCompleted();
+                        }
+                        else if (selection4 == 4)
+                        {
+                            progress.DisplayCompleted();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Try a different number.");
+                        }
                     }
                     else
                     {
@@ -111,19 +170,19 @@ namespace Develop05
                     if (selection2 == 1)
                     {
                         
-                        goal.CompleteGoal();
+                        points.AddPoints(goal.CompleteGoal());
                     }
                     else if (selection2 == 2)
                     {
-                        eternal.CompleteGoal();
+                        points.AddPoints(eternal.CompleteGoal());
                     }
                     else if (selection2 == 3)
                     {
-                        checklist.CompleteGoal();
+                        points.AddPoints(checklist.CompleteGoal());
                     }
                     else if (selection2 == 4)
                     {
-                        progress.CompleteGoal();
+                        points.AddPoints(progress.CompleteGoal());
                     }
                     else
                     {
@@ -132,13 +191,12 @@ namespace Develop05
                 }
                 else if (Keep_Going == 4)
                 {
-                    int point = goal.FindPoints();
-                    level.FindLevel(point);
+                    level.FindLevel(points.AddPoints(0));
                     Console.WriteLine($"Level: {level}");
                 }
                 else if (Keep_Going == 5)
                 {
-                    int point = goal.FindPoints();
+                    int point = points.AddPoints(0);
                     Console.WriteLine($"Points: {point}");
                 }
                 else

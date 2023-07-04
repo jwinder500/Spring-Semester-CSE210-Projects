@@ -38,26 +38,25 @@ namespace Develop05
             Console.WriteLine();
         }
 
-        public override void CompleteGoal()
+        public override int CompleteGoal()
         {
             //This function moves a goal from the goal list to the completed list
 
             Console.WriteLine("Which goal did you complete?");
             string goal = Console.ReadLine();
+            int points = 0;
             
             foreach (string g in Progress_Goals)
             {
                 if (g == goal)
                 {
                     int index = Goals.IndexOf($"{g}");
-                    int New_Points = Points[index];
+                    points = Points[index];
 
                     Completed.Add(g);
                     Goals.RemoveAt(index);
                     Points.RemoveAt(index);
                     Progress_Goals.RemoveAt(Progress_Goals.IndexOf(g));
-
-                    int score = points.AddPoints(New_Points);
                     break;
                 }
             }
@@ -66,17 +65,17 @@ namespace Develop05
                 if (g == goal)
                 {
                     int index = Small_Goals.IndexOf(goal);
-                    int New_Points = Small_Points[index];
+                    points = Small_Points[index];
 
                     Completed.Add(goal);
                     Small_Goals.RemoveAt(index);
                     Small_Points.RemoveAt(index);
 
-                    points.AddPoints(New_Points);
                     break;
                 }
             }
             Console.WriteLine();
+            return points;
         }
     }
 }

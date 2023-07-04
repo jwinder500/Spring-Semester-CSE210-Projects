@@ -4,7 +4,7 @@ namespace Develop05
 {
     public class Points
     {
-        private int points;
+        public int points;
         public int AddPoints(int point)
         {
             // This adds points every time a goal is completed

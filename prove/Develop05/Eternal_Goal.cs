@@ -22,25 +22,26 @@ namespace Develop05
             Console.WriteLine();
         }
         
-        public override void CompleteGoal()
+        public override int CompleteGoal()
         {
             //This function moves a goal from the goal list to the completed list
 
             Console.WriteLine("Which Eternal Goal did you complete? ");
             string goal = Console.ReadLine();
+            int points = 0;
             
             foreach (string g in Eternal_Goals)
             {
                 if (g == goal)
                 {
                     int index = Goals.IndexOf(goal);
-                    int New_Points = Points[index];
+                    points = Points[index];
                     Completed.Add(goal);
-                    points.AddPoints(New_Points);
                     break;
                 }
             }
             Console.WriteLine();
+            return points;
         }
     }
 }
