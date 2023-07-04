@@ -8,7 +8,6 @@ namespace Develop05
         protected List<string> Goals = new List<string>();
         protected List<string> Completed = new List<string>();
         protected List<int> Points = new List<int>();
-        protected Points points = new Points();
         //These lists can be used by this class or  any class below it
 
         public virtual void CreateGoal()
@@ -50,6 +49,7 @@ namespace Develop05
 
                     int score = points.AddPoints(New_Points);
                     Console.WriteLine(score);
+                    break;
                 }
             }
         }

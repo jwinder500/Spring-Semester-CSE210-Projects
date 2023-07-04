@@ -12,7 +12,7 @@ namespace Develop05
             
             Console.WriteLine("What is your new checkilst goal?");
             string goal = Console.ReadLine();
-            Checklist_Goals.Add($"{goal}");
+            Checklist_Goals.Add(goal);
 
             Console.WriteLine("How many points is it worth?");
             string _point = Console.ReadLine();
@@ -34,19 +34,21 @@ namespace Develop05
 
             Console.WriteLine("Which checklist goal did you complete?");
             goal = Console.ReadLine();
-            foreach (string g in Goals)
+            foreach (string g in Checklist_Goals)
             {
                 if (g == goal)
                 {
-                    int index = Goals.IndexOf($"{g}");
+                    int index = Goals.IndexOf(g);
                     int New_Points = Points[index];
 
                     Completed.Add(g);
                     Goals.RemoveAt(index);
                     Points.RemoveAt(index);
+                    Checklist_Goals.RemoveAt(Checklist_Goals.IndexOf(g));
                     
                     int score = points.AddPoints(New_Points);
                     Console.WriteLine(score);
+                    break;
                 }
             }
         }

@@ -12,7 +12,7 @@ namespace Develop05
             
             Console.WriteLine("What is your new Eternal Goal?");
             string goal = Console.ReadLine();
-            Eternal_Goals.Add($"{goal}");
+            Eternal_Goals.Add(goal);
 
             Console.WriteLine("How many points is it worth?(Make it Big!!!)");
             string _point = Console.ReadLine();
@@ -36,6 +36,7 @@ namespace Develop05
                     Completed.Add(g);
                     int score = points.AddPoints(New_Points);
                     Console.WriteLine(score);
+                    break;
                 }
             }
         }
