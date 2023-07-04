@@ -15,17 +15,16 @@ namespace Develop05
             Checklist_Goals.Add(goal);
 
             Console.WriteLine("How many points is it worth?");
-            string _point = Console.ReadLine();
-            int point = int.Parse(_point);
+            int point = int.Parse(Console.ReadLine());
 
             Console.WriteLine("How many times do you need to get it done?");
-            string _repeat = Console.ReadLine();
-            int repeat = int.Parse(_point);
+            int repeat = int.Parse(Console.ReadLine());
 
             for(int i = 0; i < repeat; i++)
             {
-                SaveGoal($"{goal}", point);
+                SaveGoal(goal, point);
             }
+            Console.WriteLine();
         }
 
         public override void CompleteGoal()
@@ -39,19 +38,19 @@ namespace Develop05
             {
                 if (g == goal)
                 {
-                    int index = Goals.IndexOf(g);
+                    int index = Goals.IndexOf(goal);
                     int New_Points = Points[index];
 
-                    Completed.Add(g);
+                    Completed.Add(goal);
                     Goals.RemoveAt(index);
                     Points.RemoveAt(index);
                     Checklist_Goals.RemoveAt(Checklist_Goals.IndexOf(g));
                     
-                    int score = points.AddPoints(New_Points);
-                    Console.WriteLine(score);
+                    points.AddPoints(New_Points);
                     break;
                 }
             }
+            Console.WriteLine();
         }
     }
 }

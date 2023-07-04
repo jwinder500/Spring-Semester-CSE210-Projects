@@ -29,13 +29,13 @@ namespace Develop05
                 Console.WriteLine();
 
                 //selection
-                string selection = Console.ReadLine();
-                Keep_Going = int.Parse(selection);
+                Keep_Going = int.Parse(Console.ReadLine());
+                Console.WriteLine();
 
                 //what to do based on selection
                 if (Keep_Going == 1)
                 {
-                    int selection2 = 0;
+                    int selection = 0;
 
                     //menu for creating a goal
                     Console.WriteLine();
@@ -46,22 +46,21 @@ namespace Develop05
                     Console.WriteLine("4. Progress. ");
                     Console.WriteLine();
 
-                    string answer = Console.ReadLine();
-                    selection2 = int.Parse(answer);
+                    selection = int.Parse(Console.ReadLine());
 
-                    if (selection2 == 1)
+                    if (selection == 1)
                     {
                         goal.CreateGoal();
                     }
-                    else if (selection2 == 2)
+                    else if (selection == 2)
                     {
                         eternal.CreateGoal();
                     }
-                    else if (selection2 == 3)
+                    else if (selection == 3)
                     {
                         checklist.CreateGoal();
                     }
-                    else if (selection2 == 4)
+                    else if (selection == 4)
                     {
                         progress.CreateGoal();
                     }
@@ -73,11 +72,30 @@ namespace Develop05
                 }
                 else if (Keep_Going == 2)
                 {
-                    goal.DisplayGoals();
+                    Console.WriteLine();
+                    Console.WriteLine("Which goals would you like to see? ");
+                    Console.WriteLine("1: Goals to be done");
+                    Console.WriteLine("2: Completed goals");
+                    Console.WriteLine();
+
+                    int selection1 = int.Parse(Console.ReadLine());
+
+                    if (selection1 == 1)
+                    {
+                        goal.DisplayGoals();
+                    }
+                    else if (selection1 == 2)
+                    {
+                        goal.DisplayCompleted();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Try a different number.");
+                    }
                 }
                 else if (Keep_Going == 3)
                 {
-                    int selection3 = 0;
+                    int selection2 = 0;
                     
                     //Completion menu
                     Console.WriteLine();
@@ -88,23 +106,22 @@ namespace Develop05
                     Console.WriteLine("4. Progress. ");
                     Console.WriteLine();
 
-                    string answer = Console.ReadLine();
-                    selection3 = int.Parse(answer);
+                    selection2 = int.Parse(Console.ReadLine());
 
-                    if (selection3 == 1)
+                    if (selection2 == 1)
                     {
                         
                         goal.CompleteGoal();
                     }
-                    else if (selection3 == 2)
+                    else if (selection2 == 2)
                     {
                         eternal.CompleteGoal();
                     }
-                    else if (selection3 == 3)
+                    else if (selection2 == 3)
                     {
                         checklist.CompleteGoal();
                     }
-                    else if (selection3 == 4)
+                    else if (selection2 == 4)
                     {
                         progress.CompleteGoal();
                     }

@@ -18,28 +18,29 @@ namespace Develop05
             string _point = Console.ReadLine();
             int point = int.Parse(_point);
             
-            SaveGoal($"{goal}", point);
+            SaveGoal(goal, point);
+            Console.WriteLine();
         }
         
         public override void CompleteGoal()
         {
             //This function moves a goal from the goal list to the completed list
 
-            Console.WriteLine("Which Eternal Goal did you complete");
+            Console.WriteLine("Which Eternal Goal did you complete? ");
             string goal = Console.ReadLine();
             
             foreach (string g in Eternal_Goals)
             {
                 if (g == goal)
                 {
-                    int index = Goals.IndexOf($"{g}");
+                    int index = Goals.IndexOf(goal);
                     int New_Points = Points[index];
-                    Completed.Add(g);
-                    int score = points.AddPoints(New_Points);
-                    Console.WriteLine(score);
+                    Completed.Add(goal);
+                    points.AddPoints(New_Points);
                     break;
                 }
             }
+            Console.WriteLine();
         }
     }
 }

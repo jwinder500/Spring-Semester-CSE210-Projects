@@ -21,22 +21,21 @@ namespace Develop05
             int point = int.Parse(_point);
 
             Console.WriteLine("How many types of goals do you need to set to reach it?");
-            string _goal = Console.ReadLine();
-            int goals = int.Parse(_goal);
+            int goals = int.Parse(Console.ReadLine());
 
-            for (int g; goals <= 0; goals --)
+            for (int g = goals; g > 0; g --)
             {
-                g = goals;
                 Console.WriteLine("What Progress Goal do you want to set?");
                 string pgoal = Console.ReadLine();
                 Small_Goals.Add(pgoal);
 
                 Console.WriteLine("How many points is it worth");
-                string _points = Console.ReadLine();
-                int points = int.Parse(_point);
+                int points = int.Parse(Console.ReadLine());
+                Console.WriteLine();
             }
 
-            SaveGoal($"{goal}", point);
+            SaveGoal(goal, point);
+            Console.WriteLine();
         }
 
         public override void CompleteGoal()
@@ -59,7 +58,6 @@ namespace Develop05
                     Progress_Goals.RemoveAt(Progress_Goals.IndexOf(g));
 
                     int score = points.AddPoints(New_Points);
-                    Console.WriteLine(score);
                     break;
                 }
             }
@@ -67,18 +65,18 @@ namespace Develop05
             {
                 if (g == goal)
                 {
-                    int index = Small_Goals.IndexOf($"{g}");
+                    int index = Small_Goals.IndexOf(goal);
                     int New_Points = Small_Points[index];
 
-                    Completed.Add(g);
+                    Completed.Add(goal);
                     Small_Goals.RemoveAt(index);
                     Small_Points.RemoveAt(index);
 
-                    int score = points.AddPoints(New_Points);
-                    Console.WriteLine(score);
+                    points.AddPoints(New_Points);
                     break;
                 }
             }
+            Console.WriteLine();
         }
     }
 }

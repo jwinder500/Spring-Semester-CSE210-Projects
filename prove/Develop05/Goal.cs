@@ -22,7 +22,7 @@ namespace Develop05
             string _point = Console.ReadLine();
             int point = int.Parse(_point);
 
-            SaveGoal($"{goal}", point);
+            SaveGoal(goal, point);
         }
         protected void SaveGoal(string goal, int point)
         {
@@ -37,6 +37,7 @@ namespace Develop05
 
             Console.WriteLine("Which goal did you complete?");
             string goal = Console.ReadLine();
+            Console.WriteLine();
             foreach (string g in Goals)
             {
                 if (g == goal)
@@ -62,6 +63,7 @@ namespace Develop05
             {
                 Console.WriteLine(goal);
             }
+            Console.WriteLine();
         }
         public void DisplayCompleted()
         {
@@ -71,6 +73,7 @@ namespace Develop05
             {
                 Console.WriteLine(goal);
             }
+            Console.WriteLine();
         }
         public int FindPoints()
         {
