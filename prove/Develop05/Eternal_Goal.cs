@@ -21,12 +21,13 @@ namespace Develop05
             SaveGoal($"{goal}", point);
         }
         
-        public override void CompleteGoal(string goal)
+        public override void CompleteGoal()
         {
             //This function moves a goal from the goal list to the completed list
 
             Console.WriteLine("Which Eternal Goal did you complete");
-            goal = Console.ReadLine();
+            string goal = Console.ReadLine();
+            
             foreach (string g in Eternal_Goals)
             {
                 if (g == goal)

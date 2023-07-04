@@ -2,7 +2,7 @@ using System;
 
 namespace Develop05
 {
-    public class Checlist_Goal:Goal
+    public class Checklist_Goal:Goal
     {
         private List<string> Checklist_Goals = new List<string>();
         //This list is for checklist goals
@@ -28,12 +28,13 @@ namespace Develop05
             }
         }
 
-        public override void CompleteGoal(string goal)
+        public override void CompleteGoal()
         {
             //This function moves a goal from the goal list to the completed list
 
             Console.WriteLine("Which checklist goal did you complete?");
-            goal = Console.ReadLine();
+            string goal = Console.ReadLine();
+            
             foreach (string g in Checklist_Goals)
             {
                 if (g == goal)

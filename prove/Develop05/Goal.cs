@@ -8,6 +8,7 @@ namespace Develop05
         protected List<string> Goals = new List<string>();
         protected List<string> Completed = new List<string>();
         protected List<int> Points = new List<int>();
+        public Points points = new Points();
         //These lists can be used by this class or  any class below it
 
         public virtual void CreateGoal()
@@ -30,12 +31,12 @@ namespace Develop05
             Points.Add(point);
             Goals.Add(goal);
         }
-        public virtual void CompleteGoal(string goal)
+        public virtual void CompleteGoal()
         {
             //This function moves a goal from the goal list to the completed list
 
             Console.WriteLine("Which goal did you complete?");
-            goal = Console.ReadLine();
+            string goal = Console.ReadLine();
             foreach (string g in Goals)
             {
                 if (g == goal)
@@ -70,6 +71,11 @@ namespace Develop05
             {
                 Console.WriteLine(goal);
             }
+        }
+        public int FindPoints()
+        {
+            int point = points.AddPoints(0);
+            return point;
         }
     }
 }

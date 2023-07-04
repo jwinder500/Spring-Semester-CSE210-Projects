@@ -2,7 +2,7 @@ using System;
 
 namespace Develop05
 {
-    public class Progress:Goal
+    public class Progress_Goal:Goal
     {
         private List<string> Progress_Goals = new List<string>();
         private List<string> Small_Goals = new List<string>();
@@ -39,12 +39,13 @@ namespace Develop05
             SaveGoal($"{goal}", point);
         }
 
-        public override void CompleteGoal(string goal)
+        public override void CompleteGoal()
         {
             //This function moves a goal from the goal list to the completed list
 
             Console.WriteLine("Which goal did you complete?");
-            goal = Console.ReadLine();
+            string goal = Console.ReadLine();
+            
             foreach (string g in Progress_Goals)
             {
                 if (g == goal)
