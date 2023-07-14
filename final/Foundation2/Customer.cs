@@ -4,13 +4,9 @@ namespace Foundation2
 {
     public class Customer
     {
-        private string Name;
+        public string Name;
         public Address address = new Address();
-
-        public void ChangeName(string name)
-        {
-            Name = name;
-        }
+        
         public bool USA()
         {
             string US = "USA";
