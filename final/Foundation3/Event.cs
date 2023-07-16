@@ -14,12 +14,12 @@ namespace Foundation3
             string descrition = "description";
             return descrition;
         }
-        public string date(int day, int month, int year)
+        protected string date(int day, int month, int year)
         {
             string MMDDYY = $"{month}/{day}/{year}";
             return MMDDYY;
         }
-        public string time(int hour, int min)
+        protected string time(int hour, int min)
         {
             string time = $"{hour}:{min}";
             return time;

@@ -1,9 +1,18 @@
 using System;
 
-class Program
+namespace Foundation4
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Hello Foundation4 World!");
+        static void Main(string[] args)
+        {
+            Running running = new Running();
+            Swimming swimming = new Swimming();
+            Cycling cycling = new Cycling();
+
+            running.GetSummary();
+            swimming.GetSummary();
+            cycling.GetSummary();
+        }
     }
 }
