@@ -10,9 +10,9 @@ namespace Foundation4
             Swimming swimming = new Swimming();
             Cycling cycling = new Cycling();
 
-            running.GetSummary();
-            swimming.GetSummary();
-            cycling.GetSummary();
+            Console.WriteLine(running.GetSummary());
+            Console.WriteLine(swimming.GetSummary());
+            Console.WriteLine(cycling.GetSummary());
         }
     }
 }

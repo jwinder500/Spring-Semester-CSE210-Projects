@@ -16,7 +16,7 @@ namespace Foundation4
         }
         protected override int speed(int distance, int time)
         {
-            int Speed = (distance / time) * 60;
+            int Speed = ((distance / time) * 60);
             return Speed;
         }
         protected override int pace(int distance, int time)
