@@ -21,9 +21,10 @@ namespace Foundation2
             Zip = zip;
         }
 
-        public void DisplayAddress()
+        public string DisplayAddress()
         {
-            Console.WriteLine($"{StreetNumber} {Street}, {City}, {State} {Country} {Zip}");
+            string address = $"{StreetNumber} {Street}, {City}, {State} {Country} {Zip}";
+            return address;
         }
         public string FindCountry()
         {
