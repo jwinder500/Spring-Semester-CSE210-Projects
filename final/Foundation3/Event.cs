@@ -4,20 +4,30 @@ namespace Foundation3
 {
     public class Event
     {
-        protected string title;
-        protected string description;
+        protected virtual string title()
+        {
+            string title = "Event";
+            return title;
+        }
+        protected virtual string description()
+        {
+            string descrition = "description";
+            return descrition;
+        }
         public string date(int day, int month, int year)
         {
-            string strmonth = month.ToString();
-            string strday = day.ToString();
-            string stryear = year.ToString();
-            protected string MMDDYY = $"{strmonth}/{strday}/{stryear}";
+            string MMDDYY = $"{month}/{day}/{year}";
             return MMDDYY;
         }
-        protected string time()
+        public string time(int hour, int min)
         {
-
+            string time = $"{hour}:{min}";
+            return time;
         }
-        protected string address;
+        protected virtual string address()
+        {
+            string address = "address";
+            return address;
+        }
     }
 }
