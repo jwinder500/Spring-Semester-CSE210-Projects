@@ -6,12 +6,18 @@ namespace Foundation3
     {
         protected string title;
         protected string description;
-        protected string date(int day, int month, int year)
+        public string date(int day, int month, int year)
         {
-            protected string MMDDYY = $"{month}/{day}/{year}";
+            string strmonth = month.ToString();
+            string strday = day.ToString();
+            string stryear = year.ToString();
+            protected string MMDDYY = $"{strmonth}/{strday}/{stryear}";
             return MMDDYY;
         }
-        protected int time;
+        protected string time()
+        {
+
+        }
         protected string address;
     }
 }
